@@ -23,8 +23,27 @@
 
 ### 依赖安装
 
-首先需要安装必要的依赖包:
+首先安装必要的依赖包：
+
+**使用 virtualenv (推荐):**
+
+```bash
+python3 -m venv .venv
+pip install -U pip
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate  # Windows
 ```
+
+**或使用 conda:**
+
+```bash
+conda create -n multimodal_rag
+conda activate multimodal_rag
+```
+
+然后安装核心包：
+
+```bash
 pip install -r requirements.txt
 ```
 
@@ -60,6 +79,6 @@ mv Visualized_m3.pth ./models/
 ```
 ## 如何使用
 ```
-cd app
-uvicorn main:app --reload
+cd src
+uvicorn app.main:app --reload
 ```
